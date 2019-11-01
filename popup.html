@@ -6,10 +6,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>YT Links Explorer</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <style>
     body {
+      font-family: 'Lato', sans-serif;
       min-width: 400px;
       max-width: 400px;
+    }
+    h3 {
+      display: flex;
+      align-content: center;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li{
+      display: flex;
+      align-items: center;
+      height: 1.2em;
+      padding: 5px 10px;
+    }
+    li:not(:last-child) {
+      border-bottom: 1px solid grey;
+    }
+    li:nth-of-type(2n+1) {
+      background-color: rgba(240, 128, 128, .1);
+    }
+    li a {
+      width: 100%;
+      text-decoration: none;
+      color: black;
+      transition: all 0.2s ease-in;
+      -webkit-transition: all 0.2s ease-in;
+    }
+    li a:hover::before {
+      content: "▶  ";
+      color: red;
     }
   </style>
   <script src="./jquery-3.4.1.min.js"></script>
@@ -17,8 +50,10 @@
 </head>
 
 <body>
-  <h3>YT Links in the page:</h3>
-  <ul id="links"></ul>
+  <h3>Available &nbsp; <img src="./yt.png" alt="YouTube" width="16" height="16"> &nbsp; videos:
+  </h3>
+  <ul id="links">
+  </ul>
 </body>
 
 </html>
